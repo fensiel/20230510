@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript DataType</title>
+</head>
+
+<body>
+
+	<!-- <h1>숫자와 문자열의 덧셈</h1>
+	<p id="result"></p>
+
+	<script>
+		var num = 10;
+		var str = "JavaScript";
+		
+		document.getElementById("result").innerHTML = (num + str);
+	</script> -->
+
+
+
+     <!-- 이 줄은 HTML 문서 내에 "result" ID를 가진 요소를 찾아서 
+        해당 요소의 내용을 수정하는 JavaScript 코드입니다. -->
+<!-- innerhtml 은 선택된 요소의 내용을 변경하기 위한 속성이다. 이 속성을 사용하여
+ 선택된 요소의 내용을 새로운 값으로 설정 가능하다. -->
+ <!-- 따라서 document.getElementByid("result").innerhtml은 html 문서 내에서
+result라는 id값을 가지는 요소의 내용을 변경하기 위해 사용하는 코드 -->
+
+<!-- 심볼(symbol)
+심블 타입은 새롭게 추가된 타입 -->
+
+    <!-- <h1>심볼 타입</h1>
+	<p id="result"></p>
+
+	<script>
+		var sym = Symbol("javascript");		// 심볼 타입
+		var symObj = Object(sym); 			// 객체 타입
+		
+		document.getElementById("result").innerHTML = 
+			(typeof sym) + "<br>" + (typeof symObj);
+	</script> -->
+	<!-- 심볼은 es6부터 추가된 새로운 데이터 타입이다 심볼은 유일한 값을 가지는 원시
+    데이터 타입
+심볼을 프로퍼티 이름으로 사용하면 다른 프로퍼티 이름과 중복되지 않으므로
+객체 내에서 유일한 프로퍼티를 만들수 있다. -->
+    <!-- 이 코드는 심볼타입과 객체 타입의 차이를 보여주는 예제
+    object()는 자바스크립트 내장 함수 중 하나로 인자로 전달된 값을 
+객체로 변환한다.
+typeof sym은 변수 "sym"의 데이터 타입을 나타내는 문자열을 반환하며
+type of symobj는 변수 symobj의 데이터 타입을 나타내는 문자열을 반환한다.
+
+객체 타입 같은경우 생성된 객체는 심볼 값을 가지고 있지만 원시 데이터 타입이 
+아니므로 이 객체의 데이터 타입은 "object"가 된다. 따라서 "typeof symobj"를
+실행하면 "object"가 반환된다.-->
+
+
+
+
+
+
+<!-- <h1>typeof 연산자</h1>
+	<p id="result"></p>
+
+	<script>
+		document.getElementById("result").innerHTML = (typeof 10) + "<br>";
+		document.getElementById("result").innerHTML += (typeof "문자열") + "<br>";
+		document.getElementById("result").innerHTML += (typeof true) + "<br>";
+		document.getElementById("result").innerHTML += (typeof undefined) + "<br>";
+		document.getElementById("result").innerHTML += (typeof null);
+	</script> -->
+
+    <!-- 자바스크립트에서 null이란 object 타입이며 아직 '값'이 정해지지 않은 것을 의미
+    또한 undefined란 null과는 달리 타입이 정해지지 않은 것을 의미 -->
+
+    <!-- 자바스크립트의 기본 타입 : 객체(object)
+    객체(object)란 실생활에서 우리가 인식할 수 있는 사물로 이해 가능하다.
+    객체는 여러 프로퍼티(property)나 메소드(method)를 같은 이름으로 묶어놓은 일종의 집합체
+    let dog ={name:"해피",age:3};객체의 생성
+    document.getElementById("result").innerHTML ="강아지의 이름은"+dog.name 
+    ,나이는" +dog.age +"살 입니다." -->
+
+    <!-- 자바스크립트는 타입 검사가 매우 유연한 언어이다.
+    자바스크립트의 변수는 타입이 정해져 있지 않으며 같은 변수에 다른 타입의 값을 다시 
+대입할수 있다.
+  -->
+  <!-- <h1>같은 변수에 다른 타입의 값 대입</h1>
+	<p id="result"></p>
+	
+
+
+
+	<script>
+		var num = 20;	// 변수의 선언과 함께 초기화
+		document.getElementById("result").innerHTML = num + "<br>";
+		num = "이십";	// 문자열 대입
+		document.getElementById("result").innerHTML += num + "<br>";
+		var num;		// 한 변수를 여러 번 초기화할 수는 있으나, 재선언은 할 수 없습니다.
+		document.getElementById("result").innerHTML += num;
+	</script> -->
+
+    <!--num 변수를 숫자 타입으로 초기화한 후 문자열 "이십"을 대입하고 다시
+    "num"변수를 초기화 한다 따라서 num 변수의 값은 마지막으로 대입한 문자열 "이십"이 된다.
+  -->
+
+  <!-- 
+    10 + "문자열" 문자열 연결을 위해 숫자 10이 문자열로 변환 =>10문자열
+    "3" * "5" 곱셈 연산을 위해 두 문자열이 모두 숫자로 변환 =>15
+    1-"문자열" 문자열을 숫자로 변환불가하기 때문에 nan이라는 값이 반환된다.=>nan
+
+   -->
+
+
+
+   <!-- <h1>명시적 타입 변환 함수</h1>
+   <p id="result"></p>
+
+   <script>
+       document.getElementById("result").innerHTML = Number("10") + "<br>";	// 10
+       document.getElementById("result").innerHTML += String(true) + "<br>";	// "true"
+       document.getElementById("result").innerHTML += Boolean(0) + "<br>";		// false
+       document.getElementById("result").innerHTML += Object(3);				// 3
+   </script> -->
+    <!-- object(3)을 호출하면 number 타입의 3을 감싸는 number 객체가 생성
+    number 객체이면서 숫자 3인것이다. -->
+
+
+
+    <!-- 숫자를 문자열로 변환
+    String() 함수 사용
+      to string과 string 의 차이
+      toString()은 객체 자체에 정의되어 있는 메소드이다.
+        반대로 문자열을 숫자로 변환하는것은 Number()함수를 사용하는 것이다.
+
+ -->
+ <!-- <script>
+    let obj ={
+        name: "john",
+        age: 30,
+        toString: function(){
+            return this.name + "is" + this.age
++ "years old."        }
+    };
+    let str = obj.toString();
+    console.log(str); // "john is 30 years old."
+ </script> -->
+<!-- 
+ <script>
+    let x =10, y=10, z=10;
+    x = x-5;
+    document.write(x + "<br>");
+    y -= 5; // y=y-5와 같은 표현
+    document.write(y+"<br>");
+    z=-5; // z=-5 와 같은 표현
+    document.write(Z);
+ </script>
+    -->
+    <!-- <h1>쉼표 연산자</h1>
+
+	<script>
+		// 루프마다 i의 값은 1씩 증가하고, 동시에 j의 값은 1씩 감소함.
+		for (var i = 0, j = 9; i <= j; i++, j--) {
+			document.write("i의 값은 " + i + "이고, j의 값은 " + j + "입니다.<br>");
+		}
+	</script> -->
+    <!-- for문에서 쉼표 연산자는 변수를 선언하고 초기화(값을 선언)하는 부분에서 사용된다.
+    i = 0, j=9 와 같이 변수 i와 j를 ,로 구분하여 초기화 하고 있다. 
+for문의 조건식에서 i<=j 와 같이 두 개의 비교 연산자를 사용하여 루프를 돈다
+i의 값은 1씩 증가하고 j의 값은 1씩 감소한다.-->
+</body>
+
+</html>
+   
